@@ -6,6 +6,7 @@
     primary_key: true
     type: number
     sql: ${TABLE}.id
+    hidden: false
 
   - dimension: address
     type: string
@@ -15,18 +16,6 @@
     type: number
     sql: ${TABLE}.area
 
-  - dimension: begin_date_day
-    type: number
-    sql: ${TABLE}.begin_date_day
-
-  - dimension: begin_date_month
-    type: number
-    sql: ${TABLE}.begin_date_month
-
-  - dimension: begin_date_year
-    type: number
-    sql: ${TABLE}.begin_date_year
-
   - dimension: comment
     type: string
     sql: ${TABLE}.comment
@@ -35,44 +24,27 @@
     type: string
     sql: ${TABLE}.coordinates
 
-  - dimension: edits_pending
-    type: number
-    sql: ${TABLE}.edits_pending
-
-  - dimension: end_date_day
-    type: number
-    sql: ${TABLE}.end_date_day
-
-  - dimension: end_date_month
-    type: number
-    sql: ${TABLE}.end_date_month
-
-  - dimension: end_date_year
-    type: number
-    sql: ${TABLE}.end_date_year
-
   - dimension: ended
     type: yesno
     sql: ${TABLE}.ended
+    hidden: false
 
   - dimension: gid
     type: string
     sql: ${TABLE}.gid
-
-  - dimension_group: last_updated
-    type: time
-    timeframes: [time, date, week, month]
-    sql: ${TABLE}.last_updated
+    hidden: false
 
   - dimension: name
     type: string
     sql: ${TABLE}.name
 
-  - dimension: type
-    type: number
+  - dimension: type_id
     sql: ${TABLE}.type
+    hidden: true
+  
+  - dimension: type
+    sql: ${place_type.name}
 
   - measure: count
     type: count
     drill_fields: [id, name]
-

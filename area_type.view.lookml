@@ -5,10 +5,12 @@
   - dimension: id
     primary_key: true
     type: number
+    hidden: true
     sql: ${TABLE}.id
 
   - dimension: child_order
     type: number
+    hidden: true
     sql: ${TABLE}.child_order
 
   - dimension: description
@@ -21,6 +23,7 @@
 
   - dimension: parent
     type: number
+    hidden: true
     sql: ${TABLE}.parent
 
   - measure: count

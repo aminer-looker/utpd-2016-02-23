@@ -6,6 +6,7 @@
     primary_key: true
     type: number
     sql: ${TABLE}.id
+    hidden: true
 
   - dimension: rating
     type: number

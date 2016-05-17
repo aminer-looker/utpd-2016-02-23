@@ -6,18 +6,7 @@
     primary_key: true
     type: number
     sql: ${TABLE}.id
-
-  - dimension: begin_date_day
-    type: number
-    sql: ${TABLE}.begin_date_day
-
-  - dimension: begin_date_month
-    type: number
-    sql: ${TABLE}.begin_date_month
-
-  - dimension: begin_date_year
-    type: number
-    sql: ${TABLE}.begin_date_year
+    hidden: true
 
   - dimension: comment
     type: string
@@ -26,26 +15,17 @@
   - dimension: edits_pending
     type: number
     sql: ${TABLE}.edits_pending
-
-  - dimension: end_date_day
-    type: number
-    sql: ${TABLE}.end_date_day
-
-  - dimension: end_date_month
-    type: number
-    sql: ${TABLE}.end_date_month
-
-  - dimension: end_date_year
-    type: number
-    sql: ${TABLE}.end_date_year
+    hidden: true
 
   - dimension: ended
     type: yesno
     sql: ${TABLE}.ended
+    hidden: true
 
   - dimension: gid
     type: string
     sql: ${TABLE}.gid
+    hidden: true
 
   - dimension_group: last_updated
     type: time
@@ -56,9 +36,13 @@
     type: string
     sql: ${TABLE}.name
 
-  - dimension: type
+  - dimension: type_id
     type: number
     sql: ${TABLE}.type
+    hidden: true
+  
+  - dimension: type
+    sql: ${area_type.name}
 
   - measure: count
     type: count
