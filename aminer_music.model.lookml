@@ -65,7 +65,7 @@
       from: link
       relationship: one_to_one
       sql_on: ${composer_link.id} = ${l_artist_work.link}
-      fields: [begin_date*, end_date*]
+      fields: [begin_year, end_year]
       
     - join: composer_link_type
       from: link_type
