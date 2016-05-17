@@ -61,16 +61,16 @@
       sql_on: ${l_artist_work.entity1} = ${work.id}
       fields: []
       
-    - join: composer_link
+    - join: composing
       from: link
       relationship: one_to_one
-      sql_on: ${composer_link.id} = ${l_artist_work.link}
+      sql_on: ${composing.id} = ${l_artist_work.link}
       fields: [begin_year, end_year]
       
     - join: composer_link_type
       from: link_type
       relationship: many_to_one
-      sql_on: ${composer_link_type.id} = ${composer_link.link_type}
+      sql_on: ${composer_link_type.id} = ${composing.link_type}
       fields: []
       
     - join: composer

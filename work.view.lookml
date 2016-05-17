@@ -4,11 +4,8 @@
       select
         w.*
       from musicbrainz.work w
-      where not exists (
-        select 1
-        from musicbrainz.l_work_work lww
-        where lww.entity1 = w.id
-      )
+      left join musicbrainz.l_work_work lww on lww.entity1 = w.id
+      where lww.id is null
 
   fields:
     - dimension: id
